@@ -6,6 +6,7 @@ Solution to Tuum test assignment.
 
 I provided scripts that would make setting up a little quicker. Just run the script from the command line in the project root folder to create `.env` file.
 Replace _{your_password}_ with your input.
+
 In Windows:
 
 ```
@@ -33,6 +34,7 @@ Both have GET and POST methods available.
 Examples:
 
 GET /api/v1/accounts/{accountId} - Get one particular account
+
 POST /api/v1/accounts - Create account
 
 ```
@@ -44,6 +46,7 @@ POST /api/v1/accounts - Create account
 ```
 
 GET /api/v1/transaction/{accountId} - Get a list of transactions account has made
+
 POST /api/v1/accounts - Create account
 
 ```
@@ -60,7 +63,7 @@ After doing some research what would be a good way to handle monetary values I d
 [Stripe docs](https://stripe.com/docs/currencies#zero-decimal) helped me here. I think this approach is feasible for a small test application like this.
 
 Other than that the application has quite a simple configuration. To have Postgres container to load the data initialization script, I defined a volume mount
-in `docker-compose.yml`.
+in `docker-compose.yml`. Also I used [Testcontainers](https://www.testcontainers.org/) to test locally to actually have real database.
 
 ```
 ...
