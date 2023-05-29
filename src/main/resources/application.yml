@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://db:5432/${DATABASE_NAME}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  rabbitmq:
+    listener:
+      simple:
+        retry:
+          enabled: true
+          initial-interval: 45000
+          max-attempts: 3
+          max-interval: 80000
+          multiplier: 1.5
+    host: ${RABBITMQ_HOST}
+
+rabbitmq:
+  event_exchange: event.exchange
+  dead_event_exchange: dead.event.exchange
+
+  account_event_queue: account.event.queue
+  dead_account_event_queue: dead.account.event.queue
+  account_key: account.created
+  dead_account_key: dead.routing.account.created
+
+  balance_event_queue: balance.event.queue
+  dead_balance_event_queue: dead.balance.event.queue
+  balance_key: balance.created
+  dead_balance_key: dead.routing.balance.created
+
+  transaction_event_queue: transaction.event.queue
+  dead_transaction_event_queue: dead.transaction.event.queue
+  transaction_key: transaction.created
+  dead_transaction_key: dead.routing.transaction.created
