@@ -6,6 +6,7 @@ services:
     image: demo/tuum-test-app
     build: .
     environment:
+      DATABASE_HOST: db
       DATABASE_NAME: tuum_test
       DATABASE_USERNAME: test_user
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}

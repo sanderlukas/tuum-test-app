@@ -1,6 +1,6 @@
 # Introduction
 
-Solution to Tuum test assignment.
+My solution to Tuum test assignment.
 
 ## How to run
 
@@ -62,7 +62,7 @@ POST /api/v1/accounts - Create account
 After doing some research what would be a good way to handle monetary values I decided to go with representing amounts in cents. Some stackoverflow threads and
 [Stripe docs](https://stripe.com/docs/currencies#zero-decimal) helped me here. I think this approach is feasible for a small test application like this.
 
-Other than that the application has quite a simple configuration. To have Postgres container to load the data initialization script, I defined a volume mount
+Other than that the application has quite a simple configuration. To have Postgres container load the data initialization script, I defined a volume mount
 in `docker-compose.yml`. Also I used [Testcontainers](https://www.testcontainers.org/) to test locally to actually have real database.
 
 ```

@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://db:5432/${DATABASE_NAME}
+    url: jdbc:postgresql://${DATABASE_HOST}:5332/${DATABASE_NAME}
     username: ${DATABASE_USERNAME}
     password: ${DATABASE_PASSWORD}
   rabbitmq:
