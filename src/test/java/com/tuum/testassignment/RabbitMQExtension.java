@@ -14,6 +14,7 @@ public class RabbitMQExtension implements BeforeAllCallback, AfterAllCallback {
         RabbitMQContainer RABBIT_MQ_CONTAINER = new RabbitMQContainer("rabbitmq");
         RABBIT_MQ_CONTAINER.start();
         System.setProperty("spring.rabbitmq.host", RABBIT_MQ_CONTAINER.getHost());
+        System.setProperty("spring.rabbitmq.port", String.valueOf(RABBIT_MQ_CONTAINER.getAmqpPort()));
     }
 
     @Override
